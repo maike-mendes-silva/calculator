@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculadora">
+            <input id="tela" type="text" readonly>
+
+            <div class="linha-botoes">
+                <button onclick="tela.value = ''">AC</button>
+                <button onclick="tela.value = tela.value.slice(0, -1)">DEL</button>
+                <button onclick="tela.value += '.'">.</button>
+                <button onclick="tela.value += '/'">&divide;</button>
+            </div>
+
+            <div class="linha-botoes">
+                <button onclick="tela.value += '7'">7</button>
+                <button onclick="tela.value += '8'">8</button>
+                <button onclick="tela.value += '9'">9</button>
+                <button onclick="tela.value += '*'">&times;</button>
+            </div>
+
+            <div class="linha-botoes">
+                <button onclick="tela.value += '4'">4</button>
+                <button onclick="tela.value += '5'">5</button>
+                <button onclick="tela.value += '6'">6</button>
+                <button onclick="tela.value += '-'">&minus;</button>
+            </div>
+
+            <div class="linha-botoes">
+                <button onclick="tela.value += '1'">1</button>
+                <button onclick="tela.value += '2'">2</button>
+                <button onclick="tela.value += '3'">3</button>
+                <button onclick="tela.value += '+'">&plus;</button>
+            </div>
+
+            <div class="linha-botoes ultima">
+                <button onclick="tela.value += '00'">00</button>
+                <button onclick="tela.value += '0'">0</button>
+                <button class="terceiro" onclick="tela.value = eval(tela.value)">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
