@@ -1,11 +1,12 @@
+function calcular(){
+    tela.value = eval(tela.value)
+    if(tela.value == 'Infinity' || tela.value == 'NaN'){
+        tela.value = 'ERROR';
+    }
+}
+
 let teclas = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Backspace', 'Delete', '+', '-', '/', '*', '=', '.', 'Enter']
 let tela = window.document.querySelector('input#tela')
-
-tela.addEventListener('input', function(){
-    if(tela.value == 'NaN' || tela.value == 'Infinity'){
-        tela.value = 'ERROR'
-    }
-})
 
 document.addEventListener('keydown', function(event){
     console.log(event.key)
@@ -63,10 +64,10 @@ document.addEventListener('keydown', function(event){
                 tela.value += '*'
                 break
             case 'Enter':
-                tela.value = eval(tela.value)
+                calcular()
                 break 
             case '=':
-                tela.value = eval(tela.value)
+                calcular()
                 break
         }
     }
